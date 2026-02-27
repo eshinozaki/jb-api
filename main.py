@@ -11,7 +11,7 @@ class JunbellAlert(BaseModel):
     alert_level: str
     frequency: str
     intensity: str
-    notes_detected: List[str]
+    notes_detected: str
 
 @app.get("/")
 def health():
@@ -31,3 +31,4 @@ def classify_alert(alert: JunbellAlert):
         "intensity": alert.intensity,
         "notes_detected": alert.notes_detected
     }
+
