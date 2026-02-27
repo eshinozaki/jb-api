@@ -11,8 +11,7 @@ class JunbellAlert(BaseModel):
     alert_level: str
     frequency: str
     intensity: str
-    notes_detected: str
-
+    notes_detected: str # now "E-E-E" 
 @app.get("/")
 def health():
     return {"status": "JUNBELL API running"}
@@ -31,4 +30,5 @@ def classify_alert(alert: JunbellAlert):
         "intensity": alert.intensity,
         "notes_detected": alert.notes_detected
     }
+
 
